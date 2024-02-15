@@ -1,5 +1,6 @@
 import { NavLink, Outlet, } from 'react-router-dom';
-import viteLogo from "../../public/vite.svg";
+import { routesConfig } from "./router";
+import viteLogo from "/vite.svg";
 const isActiveRoute = ({ isActive }: { isActive: boolean; }) => isActive ? 'nav-active' : '';
 
 const Home = () => {
@@ -11,12 +12,11 @@ const Home = () => {
           <li>
             <NavLink to='/' children="Home" className={isActiveRoute} />
           </li>
-          <li>
-            <NavLink to='about' children="About" className={isActiveRoute} />
-          </li>
-          <li>
-            <NavLink to='users' children="Users" className={isActiveRoute} />
-          </li>
+          {routesConfig.map(({ path, name }, index) => path && (
+            <li key={index + path + name}>
+              <NavLink to={path} children={name} className={isActiveRoute} />
+            </li>)
+          )}
         </ul>
       </nav>
       <div>

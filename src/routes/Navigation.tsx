@@ -1,32 +1,18 @@
+import { Suspense } from "react";
 import {
-  createBrowserRouter,
-  Navigate,
   RouterProvider
 } from "react-router-dom";
-import Home from "./Home";
+import router from "./router";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: Home(),
-    children: [
-      {
-        path: "about",
-        element: <h1>About</h1>,
-      },
-      {
-        path: "users",
-        element: <h1>Users</h1>,
-      },
-    ],
-    errorElement: <Navigate to={'/'} replace />
-  },
-]);
+console.log(`🚀 ~ router:`, router);
+
 
 const Navigation = () => {
   return (
     <>
-      <RouterProvider router={router} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
     </>
   );
 };
