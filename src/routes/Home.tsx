@@ -1,7 +1,9 @@
 import { NavLink, Outlet, } from 'react-router-dom';
+import NavLinkList from "../lazyLoad/components/NavLinkList";
+import { isActiveRoute } from "../utils";
 import { routesConfig } from "./router";
 import viteLogo from "/vite.svg";
-const isActiveRoute = ({ isActive }: { isActive: boolean; }) => isActive ? 'nav-active' : '';
+
 
 const Home = () => {
   return (
@@ -12,11 +14,8 @@ const Home = () => {
           <li>
             <NavLink to='/' children="Home" className={isActiveRoute} />
           </li>
-          {routesConfig.map(({ path, name }, index) => path && (
-            <li key={index + path + name}>
-              <NavLink to={path} children={name} className={isActiveRoute} />
-            </li>)
-          )}
+          <NavLinkList routesConfig={routesConfig} />
+
         </ul>
       </nav>
       <div>

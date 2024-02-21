@@ -1,8 +1,8 @@
 
-const lazyPage3 = () => {
+const LazyPage3 = () => {
   return (
     <div>lazyPage3</div>
   );
 };
 
-export default lazyPage3;
+export default LazyPage3;

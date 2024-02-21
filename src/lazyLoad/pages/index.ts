@@ -1,6 +1,7 @@
-import lazyPage1 from "./lazyPage1";
-import lazyPage2 from "./lazyPage2";
-import lazyPage3 from "./lazyPage3";
+import NotFound from "./404Page";
+import LazyPage1 from "./LazyPage1";
+import LazyPage2 from "./LazyPage2";
+import LazyPage3 from "./LazyPage3";
 
-export { lazyPage1, lazyPage2, lazyPage3 };
+export { LazyPage1, LazyPage2, LazyPage3, NotFound };
 

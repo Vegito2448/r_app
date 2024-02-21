@@ -11,7 +11,7 @@ const Navigation = () => {
   return (
     <>
       <Suspense fallback={<div>Loading...</div>}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router} fallbackElement />
       </Suspense>
     </>
   );
