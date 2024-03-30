@@ -31,5 +31,10 @@ const routesConfig: Array<RouteConfig> = [
     ] as Array<RouteConfig>,
     errorElement: <Navigate replace to="lazy1" />
   },
+  {
+    path: 'shopping/',
+    ...lazyImportObject("patternComponents/pages/ShoppingPage"),
+    name: "Shopping"
+  },
 ];
 export default routesConfig;
