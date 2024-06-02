@@ -4,9 +4,6 @@ import {
 } from "react-router-dom";
 import router from "./router";
 
-console.log(`🚀 ~ router:`, router);
-
-
 const Navigation = () => {
   return (
     <>

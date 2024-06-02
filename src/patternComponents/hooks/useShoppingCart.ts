@@ -5,8 +5,6 @@ const useShoppingCart = () => {
 
   const [ShoppingCart, setShoppingCart] = useState<{ [key: number]: ProductInCart; }>({});
 
-  console.log(`🚀 ~ ShoppingPage ~ ShoppingCart:`, ShoppingCart);
-
   const onProductQuantityChange = ({ product, quantity }: onChangeProductArgs) => {
     setShoppingCart((prev) => {
 
