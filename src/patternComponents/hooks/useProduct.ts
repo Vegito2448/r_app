@@ -11,8 +11,6 @@ interface useProductProps {
 
 const useProduct = ({ onChange, product, value = 0, initialValues }: useProductProps) => {
 
-  console.log(`🚀 ~ useProduct ~ initialValues:`, initialValues);
-
   const [counter, setCounter] = useState<number>(initialValues?.quantity || value);
 
   const isMounted = useRef(false);
