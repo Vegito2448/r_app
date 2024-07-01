@@ -1,7 +1,5 @@
 import { ProductButtons, ProductCard, ProductImage, ProductTitle } from "../components";
 import { products } from "../data/products";
-// import useShoppingCart from "../hooks/useShoppingCart";
-import '../styles/custom-styles.css';
 
 const product = products[0];
 
@@ -25,17 +23,11 @@ const ShoppingPage = () => {
           product={product}
           className="bg-dark text-white"
         >
-          {({ quantity, isMaxReached, reset, increaseBy }) =>
+          {(_) =>
             <>
               <ProductImage className='custom-image' />
               <ProductTitle className="text-white text-bold" />
               <ProductButtons className="custom-buttons" />
-              <button onClick={reset}>Reset</button>
-              <button onClick={() => increaseBy(-2)}>-2</button>
-              {!isMaxReached &&
-                <button onClick={() => increaseBy(2)}>+2</button>
-              }
-              <span>{quantity}</span>
             </>
           }</ProductCard>
 
