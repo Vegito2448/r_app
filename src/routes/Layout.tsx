@@ -1,5 +1,5 @@
 import { NavLink, Outlet, } from 'react-router-dom';
-import NavLinkList from "../lazyLoad/components/NavLinkList";
+import { NavLinkList } from "../components";
 import { isActiveRoute } from "../utils";
 import { routesConfig } from "./router";
 import viteLogo from "/vite.svg";

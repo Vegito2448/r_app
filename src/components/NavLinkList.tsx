@@ -1,14 +1,14 @@
 import { NavLink } from 'react-router-dom';
-import { RouteConfig } from "../../routes/routesConfig";
-import { isActiveRoute } from "../../utils";
+import { RouteConfig } from "../routes/routesConfig";
+import { isActiveRoute } from "../utils";
 
 
-interface NavLinkListProps {
+export interface NavLinkListProps {
   routesConfig: RouteConfig[];
 }
 
 
-const NavLinkList = ({ routesConfig, }: NavLinkListProps) => (
+export const NavLinkList = ({ routesConfig, }: NavLinkListProps) => (
   routesConfig.map(({ path, name }, index) => (
     path && (
       <li key={index + path + name}>
@@ -18,4 +18,4 @@ const NavLinkList = ({ routesConfig, }: NavLinkListProps) => (
   ))
 );
 
-export default NavLinkList;
+

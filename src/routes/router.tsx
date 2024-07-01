@@ -1,15 +1,15 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import { NotFound } from "../lazyLoad/pages";
-import { lazyImportObject } from "../utils";
+import { ErrorPage } from "../components";
+import Home from "./Layout";
 import routesConfig from "./routesConfig";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    ...lazyImportObject("routes/Home"),
+    element: <Home />,
     children: routesConfig.map((route) => route),
-    errorElement: <NotFound />
+    errorElement: <ErrorPage />
   },
 ]);
 
