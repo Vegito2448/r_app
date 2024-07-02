@@ -1,5 +1,5 @@
 import { ErrorMessage, ErrorMessageProps, useField } from "formik";
-import { HTMLInputTypeAttribute } from 'react';
+import { DetailedHTMLProps, HTMLInputTypeAttribute, OptionHTMLAttributes, ReactNode } from 'react';
 
 type Props = {
   type: HTMLInputTypeAttribute | 'select';
@@ -9,6 +9,8 @@ type Props = {
   placeholder?: string;
   ErrorMessageFP?: ErrorMessageProps;
   required?: boolean;
+  options?: Array<DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement>>;
+  children?: ReactNode;
   [key: string]: any;
 };
 
@@ -35,14 +37,20 @@ const InputCheckbox = ({ label, ErrorMessageFP, ...props }: Props) => {
   </>;
 };
 
-const InputSelect = ({ label, ErrorMessageFP, ...props }: Props) => {
+const InputSelect = ({ label, ErrorMessageFP, options = [], children, ...props }: Props) => {
 
   const [field] = useField(props);
 
   return (
     <>
       <label htmlFor={props.id || props.name}>{label}{props.required && "*"}</label>
-      <select {...field} {...props} />
+      <select {...field} {...props}>
+        {
+          options && options.length ? options.map((option, index) => (
+            <option key={index} {...option} />
+          )) : children
+        }
+      </select>
       <ErrorMessage
         name={props.name}
         component="span"

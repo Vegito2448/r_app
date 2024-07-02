@@ -1,5 +1,5 @@
 import { RouteObject } from "react-router-dom";
-import { FormikAbstraction, FormikBasicPage, FormikComponents, FormikYupPage, RegisterPage } from "../Forms/pages";
+import { DynamicForm, FormikAbstraction, FormikBasicPage, FormikComponents, FormikYupPage, RegisterFormikPage, RegisterPage } from "../Forms/pages";
 import About from "./About";
 
 
@@ -20,6 +20,11 @@ const routesConfig: Array<RouteConfig> = [
     name: "Register"
   },
   {
+    path: 'register-formik',
+    element: <RegisterFormikPage />,
+    name: "Register Formik"
+  },
+  {
     path: 'formik-basic',
     element: <FormikBasicPage />,
     name: "Formik Basic"
@@ -38,6 +43,11 @@ const routesConfig: Array<RouteConfig> = [
     path: 'formik-abstraction',
     element: <FormikAbstraction />,
     name: "Formik Abstraction"
+  },
+  {
+    path: 'dynamic-form',
+    element: <DynamicForm />,
+    name: "Dynamic Form"
   },
 ];
 export default routesConfig;

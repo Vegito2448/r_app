@@ -1,0 +1,63 @@
+[
+  {
+    "id": "1",
+    "name": "name",
+    "type": "text",
+    "required": true,
+    "minLength": 3,
+    "maxLength": 20,
+    "placeholder": "Enter your name",
+    "label": "Name",
+    "value": "John Doe"
+  },
+  {
+    "id": "2",
+    "name": "email",
+    "type": "email",
+    "required": true,
+    "placeholder": "Enter your email",
+    "label": "Email",
+    "value": "example@mail.com"
+  },
+  {
+    "id": "3",
+    "name": "phone",
+    "type": "tel",
+    "required": true,
+    "placeholder": "Enter your phone number",
+    "label": "Phone",
+    "value": "123-456-7890"
+  },
+  {
+    "id": "4",
+    "name": "message",
+    "type": "textarea",
+    "required": true,
+    "minLength": 10,
+    "maxLength": 100,
+    "placeholder": "Enter your message",
+    "label": "Message",
+    "value": "Hello, I would like to know more about your services."
+  },
+  {
+    "id": "5",
+    "name": "heroes",
+    "type": "select",
+    "label": "Favorite Hero",
+    "value": "spiderman",
+    "options": [
+      {
+        "children": "spiderman",
+        "label": "Spiderman"
+      },
+      {
+        "children": "batman",
+        "label": "Batman"
+      },
+      {
+        "children": "superman",
+        "label": "Superman"
+      }
+    ]
+  }
+]
